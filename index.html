@@ -1,0 +1,2633 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F4F0E5">
+
+  <title>RXLab Physio | Sports Physiotherapy & Rehabilitation</title>
+  <meta name="description" content="Discover personalised physiotherapy, sports injury rehabilitation, strength training and sports massage at RXLab Physio, East Kilbride.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.rxlabphysio.com/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-primary: #C15F3C;
+      --color-primary-dark: #934128;
+      --color-primary-light: #D8896D;
+
+      --color-secondary: #F4F0E5;
+      --color-secondary-dark: #D9C8B5;
+      --color-secondary-light: #FAF8F2;
+
+      --color-accent: #B7A16F;
+
+      --color-heading: #18231F;
+      --color-text: #39433D;
+      --color-muted: #70766F;
+
+      --color-background: #F4F0E5;
+      --color-background-alt: #EAE4D8;
+
+      --color-surface: #FFFFFF;
+      --color-surface-alt: #24332F;
+
+      --color-border: #DED8CC;
+      --color-border-strong: #BDB3A4;
+
+      --color-interactive: #934128;
+      --color-hover: #79351F;
+      --color-focus: #24332F;
+
+      --font-heading: "Sora", sans-serif;
+      --font-body: "DM Sans", sans-serif;
+
+      --container: 1300px;
+      --section-space: 100px;
+      --radius: 20px;
+      --radius-large: 30px;
+
+      --shadow: 0 18px 55px rgba(36, 51, 47, .09);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-background);
+      color: var(--color-text);
+      font-size: 17px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding-block: var(--section-space);
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--color-primary-dark);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--color-primary);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--color-heading);
+      line-height: 1.12;
+      letter-spacing: -.055em;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6.2vw, 76px);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: clamp(34px, 4.4vw, 54px);
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: clamp(23px, 2.5vw, 30px);
+      font-weight: 650;
+    }
+
+    p {
+      margin-top: 15px;
+    }
+
+    .section-intro {
+      max-width: 690px;
+      margin-top: 20px;
+      font-size: 18px;
+      color: var(--color-muted);
+    }
+
+    .btn {
+      min-height: 54px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 24px;
+      border-radius: 5px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 16px;
+      transition: .25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .btn-dark {
+      background: var(--color-surface-alt);
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: #344C43;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,.55);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--color-heading);
+    }
+
+    .arrow {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 4px;
+    }
+
+    /* NAVIGATION */
+
+    .site-header {
+      position: sticky;
+      z-index: 1000;
+      top: 0;
+      background: rgba(244,240,229,.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-wrap {
+      min-height: 86px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-name {
+      font-family: var(--font-heading);
+      font-size: 31px;
+      font-weight: 800;
+      letter-spacing: -.09em;
+      color: var(--color-primary-dark);
+    }
+
+    .brand-caption {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+      margin-top: 6px;
+      color: var(--color-heading);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-heading);
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-primary-dark);
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--color-border);
+      border-radius: 5px;
+      background: transparent;
+      color: var(--color-heading);
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 690px;
+      display: flex;
+      align-items: center;
+      background: var(--color-background);
+      padding-block: 80px;
+    }
+
+    .hero::before {
+      content: "RX";
+      position: absolute;
+      right: -30px;
+      top: 5%;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: clamp(200px, 35vw, 470px);
+      line-height: 1;
+      letter-spacing: -.12em;
+      color: rgba(193,95,60,.055);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      padding-block: 25px;
+    }
+
+    .hero h1 {
+      max-width: 730px;
+      margin-top: 27px;
+    }
+
+    .hero h1 span {
+      color: var(--color-primary);
+    }
+
+    .hero-copy > p {
+      max-width: 590px;
+      font-size: 19px;
+      color: var(--color-muted);
+      margin-top: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 38px;
+      font-size: 15px;
+      color: var(--color-muted);
+      font-weight: 600;
+    }
+
+    .hero-note-dot {
+      width: 9px;
+      height: 9px;
+      background: var(--color-primary);
+      border-radius: 50%;
+    }
+
+    /* ORIGINAL CSS VISUAL */
+
+    .performance-art {
+      min-height: 510px;
+      position: relative;
+      overflow: hidden;
+      background: var(--color-surface-alt);
+      border-radius: 46% 46% 10px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      isolation: isolate;
+    }
+
+    .performance-art::before,
+    .performance-art::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(244,240,229,.23);
+      border-radius: 50%;
+      width: 390px;
+      height: 390px;
+    }
+
+    .performance-art::after {
+      width: 510px;
+      height: 510px;
+    }
+
+    .art-ring {
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      border: 1px solid rgba(193,95,60,.8);
+      border-radius: 50%;
+      transform: rotate(-35deg) scaleX(1.5);
+    }
+
+    .art-ring-two {
+      width: 190px;
+      height: 190px;
+      border-color: rgba(244,240,229,.6);
+      transform: rotate(40deg) scaleX(1.5);
+    }
+
+    .art-centre {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .art-centre strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: clamp(65px, 8vw, 110px);
+      line-height: 1;
+      letter-spacing: -.1em;
+      color: var(--color-secondary);
+    }
+
+    .art-centre span {
+      display: block;
+      font-size: 15px;
+      letter-spacing: .2em;
+      color: var(--color-primary-light);
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    .art-label {
+      position: absolute;
+      z-index: 3;
+      padding: 13px 17px;
+      background: var(--color-secondary);
+      color: var(--color-heading);
+      font-size: 15px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .art-label-one {
+      top: 18%;
+      left: 4%;
+    }
+
+    .art-label-two {
+      bottom: 18%;
+      right: 4%;
+      background: var(--color-primary);
+      color: white;
+    }
+
+    .art-cross {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 370px;
+      height: 1px;
+      background: rgba(244,240,229,.3);
+      transform: translate(-50%,-50%) rotate(42deg);
+    }
+
+    .art-cross::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 370px;
+      background: rgba(244,240,229,.3);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    /* PROOF STRIP */
+
+    .proof-strip {
+      background: var(--color-primary);
+      color: white;
+      padding-block: 26px;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 25px;
+    }
+
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-right: 1px solid rgba(255,255,255,.3);
+      padding-right: 20px;
+    }
+
+    .proof-item:last-child {
+      border: 0;
+    }
+
+    .proof-number {
+      font-family: var(--font-heading);
+      font-size: 30px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .proof-text {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    /* POSITIONING */
+
+    .position-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .position-heading {
+      position: sticky;
+      top: 125px;
+    }
+
+    .position-heading h2 {
+      margin-top: 24px;
+    }
+
+    .position-copy {
+      font-size: 19px;
+    }
+
+    .position-copy p {
+      margin-top: 0;
+      margin-bottom: 22px;
+    }
+
+    .position-highlight {
+      margin-top: 30px;
+      padding: 25px 28px;
+      border-left: 4px solid var(--color-primary);
+      background: var(--color-secondary-light);
+      font-family: var(--font-heading);
+      font-size: 21px;
+      font-weight: 600;
+      color: var(--color-heading);
+    }
+
+    /* SERVICES */
+
+    .services-section {
+      background: var(--color-secondary-light);
+    }
+
+    .section-heading-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 55px;
+    }
+
+    .section-heading-row h2 {
+      margin-top: 22px;
+      max-width: 680px;
+    }
+
+    .section-heading-row > p {
+      max-width: 360px;
+      margin: 0;
+      color: var(--color-muted);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .service-item {
+      padding: 29px;
+      min-height: 260px;
+      border-top: 2px solid var(--color-border-strong);
+      transition: .3s ease;
+    }
+
+    .service-item:hover {
+      border-color: var(--color-primary);
+      background: white;
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 62px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary-dark);
+      background: var(--color-background-alt);
+      border-radius: 50%;
+      margin-bottom: 27px;
+    }
+
+    .service-icon svg {
+      width: 35px;
+      height: 35px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .service-item h3 {
+      font-size: 23px;
+    }
+
+    .service-item p {
+      font-size: 16px;
+      color: var(--color-muted);
+      margin-top: 13px;
+    }
+
+    /* REHABILITATION FEATURE */
+
+    .rehab-section {
+      background: var(--color-surface-alt);
+      color: var(--color-secondary);
+      overflow: hidden;
+    }
+
+    .rehab-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .rehab-section h2 {
+      color: white;
+      margin-top: 22px;
+    }
+
+    .rehab-section .eyebrow {
+      color: var(--color-primary-light);
+    }
+
+    .rehab-copy > p {
+      color: rgba(244,240,229,.78);
+      font-size: 18px;
+      max-width: 550px;
+    }
+
+    .rehab-list {
+      list-style: none;
+      margin-top: 28px;
+      display: grid;
+      gap: 17px;
+    }
+
+    .rehab-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      color: var(--color-secondary);
+      font-size: 16px;
+    }
+
+    .rehab-list li::before {
+      content: "+";
+      color: var(--color-primary-light);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .rehab-visual {
+      min-height: 410px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #34473E;
+      overflow: hidden;
+    }
+
+    .rehab-visual::before {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border: 1px solid rgba(244,240,229,.35);
+      border-radius: 50%;
+    }
+
+    .rehab-visual::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border: 1px solid var(--color-primary-light);
+      border-radius: 50%;
+    }
+
+    .rehab-visual strong {
+      z-index: 2;
+      font-family: var(--font-heading);
+      font-size: clamp(40px,5vw,72px);
+      text-align: center;
+      color: var(--color-secondary);
+      letter-spacing: -.07em;
+    }
+
+    .rehab-visual small {
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      font-size: 15px;
+      color: var(--color-secondary);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      z-index: 3;
+    }
+
+    /* PRICING */
+
+    .pricing-intro {
+      max-width: 720px;
+      margin-bottom: 48px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .price-item {
+      padding: 27px;
+      border: 1px solid var(--color-border);
+      background: rgba(255,255,255,.4);
+      min-height: 245px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-item.featured {
+      background: var(--color-surface-alt);
+      color: white;
+      border-color: var(--color-surface-alt);
+    }
+
+    .price-item h3 {
+      font-size: 21px;
+    }
+
+    .price-item.featured h3 {
+      color: white;
+    }
+
+    .price-item p {
+      font-size: 16px;
+      color: var(--color-muted);
+    }
+
+    .price-item.featured p {
+      color: rgba(255,255,255,.75);
+    }
+
+    .price {
+      margin-top: auto;
+      padding-top: 24px;
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+    }
+
+    .price strong {
+      font-family: var(--font-heading);
+      font-size: 35px;
+      letter-spacing: -.06em;
+      color: var(--color-primary-dark);
+    }
+
+    .featured .price strong {
+      color: var(--color-primary-light);
+    }
+
+    .price span {
+      font-size: 15px;
+      color: var(--color-muted);
+    }
+
+    .featured .price span {
+      color: rgba(255,255,255,.7);
+    }
+
+    .pricing-note {
+      margin-top: 28px;
+      padding: 20px 24px;
+      background: var(--color-secondary-light);
+      font-size: 16px;
+      color: var(--color-muted);
+    }
+
+    .packages {
+      margin-top: 75px;
+    }
+
+    .packages h3 {
+      margin-bottom: 25px;
+    }
+
+    .package-list {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+    }
+
+    .package {
+      border-bottom: 2px solid var(--color-primary);
+      padding: 19px 15px;
+    }
+
+    .package strong {
+      display: block;
+      font-family: var(--font-heading);
+      color: var(--color-heading);
+      font-size: 19px;
+    }
+
+    .package span {
+      display: block;
+      margin-top: 8px;
+      font-size: 16px;
+      color: var(--color-muted);
+    }
+
+    /* ONLINE REHAB */
+
+    .online-section {
+      background: var(--color-background-alt);
+    }
+
+    .online-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .online-art {
+      min-height: 390px;
+      background: var(--color-primary);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 45px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .online-art::before {
+      content: "01";
+      position: absolute;
+      font-family: var(--font-heading);
+      font-size: 280px;
+      font-weight: 800;
+      color: rgba(255,255,255,.09);
+      right: -20px;
+      bottom: -85px;
+    }
+
+    .online-art span {
+      position: relative;
+      font-size: 15px;
+      letter-spacing: .15em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .online-art strong {
+      position: relative;
+      max-width: 420px;
+      font-family: var(--font-heading);
+      font-size: clamp(42px,5vw,65px);
+      line-height: 1.1;
+      margin-top: 20px;
+    }
+
+    .online-copy h2 {
+      margin-top: 22px;
+    }
+
+    .online-price {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-top: 26px;
+    }
+
+    .online-price strong {
+      font-family: var(--font-heading);
+      font-size: 42px;
+      color: var(--color-primary-dark);
+    }
+
+    .online-price span {
+      color: var(--color-muted);
+    }
+
+    /* PRACTITIONERS */
+
+    .team-section {
+      background: var(--color-secondary-light);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      margin-top: 48px;
+    }
+
+    .team-member {
+      padding: 35px;
+      background: white;
+      border-bottom: 3px solid var(--color-primary);
+    }
+
+    .team-number {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 52px;
+      font-weight: 800;
+      color: rgba(193,95,60,.3);
+      letter-spacing: -.08em;
+    }
+
+    .team-member h3 {
+      margin-top: 8px;
+    }
+
+    .team-qualification {
+      color: var(--color-primary-dark);
+      font-weight: 700;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .team-member p {
+      color: var(--color-muted);
+      font-size: 16px;
+    }
+
+    /* PROCESS */
+
+    .process-section {
+      background: var(--color-background);
+    }
+
+    .process-track {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 35px;
+    }
+
+    .process-item {
+      position: relative;
+      padding-top: 25px;
+      border-top: 2px solid var(--color-primary);
+    }
+
+    .process-item span {
+      font-family: var(--font-heading);
+      font-size: 35px;
+      color: var(--color-primary);
+      font-weight: 800;
+    }
+
+    .process-item h3 {
+      margin-top: 17px;
+    }
+
+    .process-item p {
+      color: var(--color-muted);
+      font-size: 16px;
+    }
+
+    /* LOCATION */
+
+    .location-section {
+      background: var(--color-secondary-light);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr .85fr;
+      gap: 70px;
+    }
+
+    .location-info h2 {
+      margin-top: 22px;
+    }
+
+    .location-address {
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--color-heading);
+      margin-top: 25px;
+    }
+
+    .hours {
+      margin-top: 35px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-block: 13px;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 16px;
+    }
+
+    .hours-row strong {
+      color: var(--color-heading);
+    }
+
+    .hours-note {
+      font-size: 15px;
+      color: var(--color-muted);
+      margin-top: 15px;
+    }
+
+    .location-panel {
+      min-height: 430px;
+      padding: 40px;
+      background: var(--color-surface-alt);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .location-panel::before {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(244,240,229,.25);
+      border-radius: 50%;
+      top: 25px;
+      right: -110px;
+    }
+
+    .location-panel small {
+      position: relative;
+      font-size: 15px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .location-panel strong {
+      position: relative;
+      font-family: var(--font-heading);
+      font-size: clamp(35px,4vw,55px);
+      line-height: 1.1;
+      max-width: 350px;
+    }
+
+    .location-panel p {
+      position: relative;
+      font-size: 16px;
+      color: rgba(255,255,255,.75);
+    }
+
+    /* FAQ */
+
+    .faq-list {
+      max-width: 900px;
+      margin: 45px auto 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--color-border-strong);
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 24px 40px 24px 0;
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--color-heading);
+      position: relative;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 5px;
+      top: 17px;
+      font-size: 30px;
+      color: var(--color-primary);
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-answer {
+      padding: 0 30px 25px 0;
+      color: var(--color-muted);
+      font-size: 16px;
+    }
+
+    /* CTA */
+
+    .final-cta {
+      background: var(--color-primary);
+      color: white;
+      padding-block: 90px;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      max-width: 800px;
+      margin-inline: auto;
+      color: white;
+    }
+
+    .final-cta p {
+      max-width: 650px;
+      margin: 20px auto 30px;
+      color: rgba(255,255,255,.9);
+      font-size: 18px;
+    }
+
+    .final-cta .btn {
+      background: var(--color-surface-alt);
+      color: white;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      background: var(--color-surface-alt);
+      color: white;
+      padding: 65px 0 35px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 50px;
+    }
+
+    .footer .brand-name {
+      color: var(--color-primary-light);
+    }
+
+    .footer .brand-caption {
+      color: white;
+    }
+
+    .footer p {
+      max-width: 400px;
+      color: rgba(255,255,255,.7);
+      font-size: 16px;
+    }
+
+    .footer h3 {
+      color: white;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,.75);
+      font-size: 16px;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-primary-light);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.2);
+      margin-top: 50px;
+      padding-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 15px;
+      color: rgba(255,255,255,.65);
+    }
+
+    /* MOBILE STICKY CONVERSION */
+
+    .mobile-cta {
+      display: none;
+    }
+
+    /* MOTION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes orbit {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .art-ring {
+      animation: orbit 28s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* TABLET */
+
+    @media (max-width: 1024px) {
+      :root {
+        --section-space: 75px;
+      }
+
+      .hero-grid {
+        gap: 30px;
+      }
+
+      .performance-art {
+        min-height: 420px;
+      }
+
+      .position-grid,
+      .rehab-grid,
+      .online-grid,
+      .location-grid {
+        gap: 40px;
+      }
+
+      .services-grid,
+      .pricing-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .package-list {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 760px) {
+      :root {
+        --section-space: 58px;
+      }
+
+      body {
+        font-size: 16px;
+        padding-bottom: 90px;
+      }
+
+      .container {
+        width: calc(100% - 30px);
+      }
+
+      .nav-wrap {
+        min-height: 72px;
+      }
+
+      .brand-name {
+        font-size: 28px;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--color-background);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 25px 20px;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: .25s ease;
+      }
+
+      .nav-links.is-open {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .nav-links li {
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 19px 5px;
+        font-size: 19px;
+      }
+
+      .nav-desktop-cta {
+        display: none;
+      }
+
+      .hero {
+        padding-block: 55px 35px;
+        min-height: auto;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px,11vw,56px);
+      }
+
+      .hero-copy > p {
+        font-size: 17px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .performance-art {
+        min-height: 360px;
+        border-radius: 46% 46% 10px 10px;
+      }
+
+      .art-centre strong {
+        font-size: 75px;
+      }
+
+      .proof-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .proof-item {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,.25);
+        padding: 0 0 14px;
+      }
+
+      .proof-item:last-child {
+        border-bottom: 0;
+      }
+
+      .proof-number {
+        font-size: 26px;
+      }
+
+      .position-grid,
+      .rehab-grid,
+      .online-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .position-heading {
+        position: static;
+      }
+
+      .section-heading-row {
+        display: block;
+        margin-bottom: 30px;
+      }
+
+      .section-heading-row > p {
+        margin-top: 20px;
+      }
+
+      .services-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .service-item {
+        min-height: auto;
+        padding: 24px 15px;
+      }
+
+      .rehab-visual {
+        min-height: 300px;
+      }
+
+      .package-list {
+        grid-template-columns: 1fr;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .team-member {
+        padding: 27px;
+      }
+
+      .process-track {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .online-art {
+        min-height: 290px;
+        padding: 30px;
+      }
+
+      .location-panel {
+        min-height: 330px;
+        padding: 30px;
+      }
+
+      .hours-row {
+        font-size: 15px;
+      }
+
+      .faq-item summary {
+        font-size: 18px;
+      }
+
+      .final-cta {
+        padding-block: 65px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      /* Exactly two persistent mobile actions */
+
+      .mobile-cta {
+        position: fixed;
+        z-index: 1200;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 11px 12px calc(11px + env(safe-area-inset-bottom));
+        background: rgba(244,240,229,.97);
+        border-top: 1px solid var(--color-border);
+        box-shadow: 0 -8px 25px rgba(24,35,31,.1);
+      }
+
+      .mobile-cta a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 10px 7px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1.25;
+        font-weight: 700;
+      }
+
+      .mobile-cta .mobile-book {
+        background: var(--color-primary-dark);
+        color: white;
+      }
+
+      .mobile-cta .mobile-email {
+        background: var(--color-surface-alt);
+        color: white;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "RXLab Physio",
+    "url": "https://www.rxlabphysio.com/",
+    "email": "info@rxlabphysio.com",
+    "description": "Physiotherapy, sports injury rehabilitation, strength-based rehabilitation and sports massage.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "20 Wilson Place, Gainline Strength",
+      "addressLocality": "East Kilbride",
+      "addressRegion": "Scotland",
+      "addressCountry": "GB"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Monday",
+        "opens": "08:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Wednesday",
+        "opens": "08:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Thursday",
+        "opens": "08:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "10:00",
+        "closes": "17:00"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Physiotherapy and rehabilitation services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Initial Physiotherapy Consultation"
+          },
+          "price": "60",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Returning Client Appointment"
+          },
+          "price": "50",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Sports Massage"
+          },
+          "price": "50",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Supported Rehabilitation and Strength Training"
+          },
+          "price": "50",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Full Body MOT"
+          },
+          "price": "85",
+          "priceCurrency": "GBP"
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+
+      <a href="#home" class="brand" aria-label="RXLab Physio homepage">
+        <span class="brand-name">RXLAB</span>
+        <span class="brand-caption">Physiotherapy</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        ☰
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#rehabilitation">Rehabilitation</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#location">Find Us</a></li>
+        </ul>
+      </nav>
+
+      <a
+        class="btn btn-primary nav-desktop-cta"
+        href="https://rxlab.uk2.cliniko.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Book Appointment <span class="arrow">↗</span>
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Physiotherapy · East Kilbride</span>
+
+          <h1>
+            Recovery is just the beginning.
+            <span>Move stronger.</span>
+          </h1>
+
+          <p>
+            Physiotherapy built around your goals, your movement
+            and the activities you love. From sports injuries to
+            everyday pain, RXLab combines clinical expertise with
+            practical, strength-based rehabilitation.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              href="https://rxlab.uk2.cliniko.com/"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book Your Appointment <span class="arrow">↗</span>
+            </a>
+
+            <a href="#services" class="btn btn-dark">
+              Explore Our Services <span class="arrow">↓</span>
+            </a>
+          </div>
+
+          <div class="hero-note">
+            <span class="hero-note-dot"></span>
+            Based at Gainline Strength, East Kilbride
+          </div>
+        </div>
+
+        <div class="performance-art reveal" aria-label="RXLab movement and performance graphic">
+          <div class="art-cross"></div>
+          <div class="art-ring"></div>
+          <div class="art-ring art-ring-two"></div>
+
+          <div class="art-centre">
+            <strong>RX</strong>
+            <span>MOVE · RECOVER · PERFORM</span>
+          </div>
+
+          <div class="art-label art-label-one">
+            CLINICAL EXPERTISE
+          </div>
+
+          <div class="art-label art-label-two">
+            STRENGTH-BASED REHAB
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VERIFIED BUSINESS PROOF -->
+
+    <section class="proof-strip" aria-label="RXLab experience">
+      <div class="container proof-grid">
+
+        <div class="proof-item">
+          <span class="proof-number">1000+</span>
+          <span class="proof-text">Patients treated, according to RXLab's published website information</span>
+        </div>
+
+        <div class="proof-item">
+          <span class="proof-number">NHS</span>
+          <span class="proof-text">Clinical experience alongside private practice and sports rehabilitation</span>
+        </div>
+
+        <div class="proof-item">
+          <span class="proof-number">SPORT</span>
+          <span class="proof-text">Specialist experience in CrossFit and Ironman rehabilitation</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- POSITIONING -->
+
+    <section class="section">
+      <div class="container position-grid">
+
+        <div class="position-heading reveal">
+          <span class="eyebrow">A different approach</span>
+          <h2>Physiotherapy that goes beyond pain relief.</h2>
+        </div>
+
+        <div class="position-copy reveal">
+          <p>
+            Getting out of pain is important. Getting back to the
+            things that make you feel like yourself is just as
+            important.
+          </p>
+
+          <p>
+            At RXLab, rehabilitation is built around your individual
+            needs. Whether you are returning to competitive sport,
+            rebuilding strength after an injury or managing persistent
+            discomfort, your treatment should reflect your real-life
+            goals.
+          </p>
+
+          <p>
+            Clinical assessment, personalised treatment and practical
+            movement-based rehabilitation come together to help you
+            work towards meaningful progress.
+          </p>
+
+          <div class="position-highlight">
+            Your recovery should prepare you for life beyond the
+            treatment room.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SIX CUSTOM SVG ICONS: EXACTLY TWO ROWS OF THREE -->
+
+    <section class="section services-section" id="services">
+      <div class="container">
+
+        <div class="section-heading-row reveal">
+          <div>
+            <span class="eyebrow">What we do</span>
+            <h2>Find the support that fits your goals.</h2>
+          </div>
+
+          <p>
+            Explore RXLab's physiotherapy, massage and
+            rehabilitation services. Choose a starting point
+            that reflects what you need.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <!-- ICON 1 -->
+          <article class="service-item reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="9" r="5"/>
+                <path d="M24 15v13m0-8-11 7m11-7 10 5"/>
+                <path d="m24 28-9 13m9-13 10 13"/>
+                <path d="M8 22h5m22 0h5"/>
+              </svg>
+            </div>
+            <h3>Physiotherapy</h3>
+            <p>
+              Initial assessments and returning appointments
+              to understand your injury, explore treatment
+              options and support your recovery.
+            </p>
+          </article>
+
+          <!-- ICON 2 -->
+          <article class="service-item reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M9 29c5-2 8-8 11-15"/>
+                <path d="M39 29c-5-2-8-8-11-15"/>
+                <path d="M13 31c3 5 7 7 11 7s8-2 11-7"/>
+                <path d="M17 13l-4-4m18 4 4-4"/>
+                <path d="M18 23h12"/>
+                <path d="M20 29h8"/>
+              </svg>
+            </div>
+            <h3>Sports Massage</h3>
+            <p>
+              Targeted soft-tissue treatment to address muscle
+              tension, support recovery and help you stay
+              comfortable and active.
+            </p>
+          </article>
+
+          <!-- ICON 3 -->
+          <article class="service-item reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M9 18h30"/>
+                <path d="M14 14v8m20-8v8"/>
+                <path d="M19 14v8m10-8v8"/>
+                <path d="M24 22v17"/>
+                <path d="M18 39h12"/>
+                <path d="M18 30h12"/>
+                <path d="M21 26l3-4 3 4"/>
+              </svg>
+            </div>
+            <h3>Strength-Based Rehab</h3>
+            <p>
+              Individualised, physio-led rehabilitation and
+              strength training designed around your
+              capabilities and activity goals.
+            </p>
+          </article>
+
+          <!-- ICON 4 -->
+          <article class="service-item reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="24" r="16"/>
+                <path d="M24 8v7m0 18v7M8 24h7m18 0h7"/>
+                <path d="m16 25 5 5 11-12"/>
+              </svg>
+            </div>
+            <h3>Full Body MOT</h3>
+            <p>
+              A longer assessment for complex or multiple
+              injuries, incorporating objective testing and
+              treatment tailored to your needs.
+            </p>
+          </article>
+
+          <!-- ICON 5 -->
+          <article class="service-item reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="9" y="8" width="30" height="32" rx="3"/>
+                <path d="M17 17h14m-14 7h14m-14 7h8"/>
+                <path d="m27 35 4 3 6-8"/>
+              </svg>
+            </div>
+            <h3>Online Rehabilitation</h3>
+            <p>
+              Remote rehabilitation with video analysis,
+              regular check-ins and progress reviews for
+              people who need flexible support.
+            </p>
+          </article>
+
+          <!-- ICON 6 -->
+          <article class="service-item reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M24 7v34"/>
+                <path d="M8 24h32"/>
+                <path d="m15 15 18 18m0-18L15 33"/>
+                <circle cx="24" cy="24" r="17"/>
+                <circle cx="24" cy="24" r="5"/>
+              </svg>
+            </div>
+            <h3>Sports Injury Rehab</h3>
+            <p>
+              Rehabilitation informed by the demands of
+              sport, including experience with CrossFit,
+              Ironman, rugby and running-related injuries.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- REHABILITATION -->
+
+    <section class="section rehab-section" id="rehabilitation">
+      <div class="container rehab-grid">
+
+        <div class="rehab-copy reveal">
+          <span class="eyebrow">Beyond the treatment room</span>
+
+          <h2>Build strength for the things you want to do.</h2>
+
+          <p>
+            RXLab operates within Gainline Strength, giving
+            rehabilitation a practical training environment.
+          </p>
+
+          <p>
+            Treatment can move beyond passive care and into
+            supported movement and strength development,
+            depending on your individual assessment and goals.
+          </p>
+
+          <ul class="rehab-list">
+            <li>Personalised rehabilitation and strength training.</li>
+            <li>Experience in CrossFit and Olympic weightlifting.</li>
+            <li>Support for returning to sport and everyday activities.</li>
+            <li>Objective testing where appropriate to your programme.</li>
+          </ul>
+
+          <a href="#pricing" class="btn btn-primary" style="margin-top:32px">
+            Explore Rehabilitation Options <span class="arrow">↓</span>
+          </a>
+        </div>
+
+        <div class="rehab-visual reveal">
+          <strong>STRONGER<br>IN MOTION.</strong>
+          <small>RXLab · Gainline Strength</small>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRICING -->
+
+    <section class="section" id="pricing">
+      <div class="container">
+
+        <div class="pricing-intro reveal">
+          <span class="eyebrow">Services & pricing</span>
+          <h2>Know your options before you book.</h2>
+          <p class="section-intro">
+            Explore the appointment types and published prices
+            currently listed by RXLab. If you are unsure which
+            option is appropriate, contact the clinic for guidance.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+
+          <article class="price-item featured reveal">
+            <h3>Initial Consultation</h3>
+            <p>Full assessment for new presentations, with relevant treatment where appropriate.</p>
+            <div class="price">
+              <strong>£60</strong>
+              <span>/ 60 minutes</span>
+            </div>
+          </article>
+
+          <article class="price-item reveal">
+            <h3>Returning Appointment</h3>
+            <p>For existing clients continuing treatment on an injury that has already been assessed.</p>
+            <div class="price">
+              <strong>£50</strong>
+              <span>/ 45 minutes</span>
+            </div>
+          </article>
+
+          <article class="price-item reveal">
+            <h3>Sports Massage</h3>
+            <p>Targeted soft-tissue work to ease tension and support recovery.</p>
+            <div class="price">
+              <strong>£50</strong>
+              <span>/ 45 minutes</span>
+            </div>
+          </article>
+
+          <article class="price-item reveal">
+            <h3>Massage</h3>
+            <p>A longer session allowing more areas to be covered.</p>
+            <div class="price">
+              <strong>£55</strong>
+              <span>/ 60 minutes</span>
+            </div>
+          </article>
+
+          <article class="price-item reveal">
+            <h3>Supported Rehab / Strength Training</h3>
+            <p>Individualised physiotherapy-led rehabilitation or strength training.</p>
+            <div class="price">
+              <strong>£50</strong>
+              <span>/ 60 minutes</span>
+            </div>
+          </article>
+
+          <article class="price-item reveal">
+            <h3>Full Body MOT</h3>
+            <p>Objective testing and treatment for complex or multiple injuries.</p>
+            <div class="price">
+              <strong>£85</strong>
+              <span>/ 90 minutes</span>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="pricing-note">
+          Prices and appointment durations are reproduced from
+          RXLab's published website information. Confirm current
+          availability and prices through the booking platform.
+        </div>
+
+        <div class="packages reveal">
+          <h3>Rehabilitation & Massage Packages</h3>
+
+          <div class="package-list">
+
+            <div class="package">
+              <strong>Bronze Massage</strong>
+              <span>3 × 45-minute sports massages · £141</span>
+            </div>
+
+            <div class="package">
+              <strong>Silver Massage</strong>
+              <span>5 × 45-minute sports massages · £225</span>
+            </div>
+
+            <div class="package">
+              <strong>Gold Massage</strong>
+              <span>5 × 60-minute sports massages · £250</span>
+            </div>
+
+            <div class="package">
+              <strong>3-Session Rehab</strong>
+              <span>3 × 60-minute supported rehabilitation sessions · £150</span>
+            </div>
+
+            <div class="package">
+              <strong>6-Session Rehab</strong>
+              <span>6 × 60-minute supported rehabilitation sessions · £255</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="margin-top:38px">
+          <a
+            class="btn btn-primary"
+            href="https://rxlab.uk2.cliniko.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Booking Availability <span class="arrow">↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ONLINE REHAB -->
+
+    <section class="section online-section">
+      <div class="container online-grid">
+
+        <div class="online-art reveal">
+          <span>RXLab · Online Rehabilitation</span>
+          <strong>From recovery to returning to sport.</strong>
+        </div>
+
+        <div class="online-copy reveal">
+          <span class="eyebrow">Rehabilitation beyond the clinic</span>
+
+          <h2>Progress with a plan, wherever you are.</h2>
+
+          <p>
+            RXLab's online rehabilitation service is designed
+            to support the transition between being pain-free
+            and returning to training or sport.
+          </p>
+
+          <p>
+            The published programme includes objective testing,
+            weekly check-ins, monthly review appointments and
+            video analysis.
+          </p>
+
+          <div class="online-price">
+            <strong>£100</strong>
+            <span>per month</span>
+          </div>
+
+          <a
+            href="https://rxlab.uk2.cliniko.com/"
+            class="btn btn-dark"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-top:24px"
+          >
+            Book an Initial Consultation <span class="arrow">↗</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRACTITIONERS -->
+
+    <section class="section team-section" id="team">
+      <div class="container">
+
+        <div class="reveal">
+          <span class="eyebrow">Meet your practitioners</span>
+          <h2>Clinical experience. A personal approach.</h2>
+          <p class="section-intro">
+            Get to know the practitioners behind RXLab and
+            the experience they bring to physiotherapy and
+            rehabilitation.
+          </p>
+        </div>
+
+        <div class="team-grid">
+
+          <article class="team-member reveal">
+            <span class="team-number">01</span>
+            <h3>Lauren</h3>
+
+            <div class="team-qualification">
+              BSc Physiology and Sports Science · Master's in Physiotherapy
+            </div>
+
+            <p>
+              Lauren graduated from the University of Glasgow
+              with a degree in Physiology and Sports Science
+              before completing her Master's in Physiotherapy.
+            </p>
+
+            <p>
+              Her experience includes NHS community work,
+              private practice and working with football
+              and rugby teams.
+            </p>
+
+            <p>
+              As a CrossFit competitor and Olympic weightlifting
+              enthusiast, Lauren brings an understanding of
+              the physical demands of sport to her rehabilitation
+              approach.
+            </p>
+          </article>
+
+          <article class="team-member reveal">
+            <span class="team-number">02</span>
+            <h3>Gregor</h3>
+
+            <div class="team-qualification">
+              First Class BSc (Hons) Physiotherapy · 2023
+            </div>
+
+            <p>
+              Gregor graduated from Queen Margaret University
+              and has developed clinical experience across
+              NHS acute and community settings.
+            </p>
+
+            <p>
+              His background includes musculoskeletal care,
+              orthopaedics, neurological rehabilitation,
+              paediatrics and community physiotherapy.
+            </p>
+
+            <p>
+              A keen triathlete and former mountain bike coach,
+              Gregor has a particular interest in sports injuries,
+              running rehabilitation and helping people return
+              to the activities they enjoy.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTOMER JOURNEY -->
+
+    <section class="section process-section">
+      <div class="container">
+
+        <div class="reveal">
+          <span class="eyebrow">Your next steps</span>
+          <h2>A clearer path towards your goals.</h2>
+          <p class="section-intro">
+            Understand how to begin your RXLab experience
+            before making your appointment.
+          </p>
+        </div>
+
+        <div class="process-track">
+
+          <article class="process-item reveal">
+            <span>01</span>
+            <h3>Start with an assessment</h3>
+            <p>
+              Book an initial consultation so your presentation,
+              concerns and individual goals can be assessed.
+            </p>
+          </article>
+
+          <article class="process-item reveal">
+            <span>02</span>
+            <h3>Understand your options</h3>
+            <p>
+              Discuss an appropriate treatment or rehabilitation
+              approach based on your assessment.
+            </p>
+          </article>
+
+          <article class="process-item reveal">
+            <span>03</span>
+            <h3>Work towards progress</h3>
+            <p>
+              Follow your individual programme and work towards
+              returning to the activities that matter to you.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+
+    <section class="section location-section" id="location">
+      <div class="container location-grid">
+
+        <div class="location-info reveal">
+          <span class="eyebrow">Find RXLab</span>
+          <h2>Physiotherapy at Gainline Strength.</h2>
+
+          <p>
+            RXLab operates within Gainline Strength in
+            East Kilbride, bringing physiotherapy and
+            rehabilitation into a dedicated training environment.
+          </p>
+
+          <div class="location-address">
+            Gainline Strength<br>
+            20 Wilson Place<br>
+            East Kilbride<br>
+            Scotland, United Kingdom
+          </div>
+
+          <div class="hours">
+            <div class="hours-row">
+              <strong>Monday</strong>
+              <span>08:00 – 20:00</span>
+            </div>
+            <div class="hours-row">
+              <strong>Tuesday</strong>
+              <span>Not published</span>
+            </div>
+            <div class="hours-row">
+              <strong>Wednesday</strong>
+              <span>08:00 – 20:00</span>
+            </div>
+            <div class="hours-row">
+              <strong>Thursday</strong>
+              <span>08:00 – 20:00</span>
+            </div>
+            <div class="hours-row">
+              <strong>Friday</strong>
+              <span>Not published</span>
+            </div>
+            <div class="hours-row">
+              <strong>Saturday</strong>
+              <span>10:00 – 17:00</span>
+            </div>
+            <div class="hours-row">
+              <strong>Sunday</strong>
+              <span>10:00 – 17:00</span>
+            </div>
+          </div>
+
+          <p class="hours-note">
+            Hours reflect the published RXLab website.
+            Please confirm appointment availability before visiting.
+          </p>
+        </div>
+
+        <div class="location-panel reveal">
+          <small>RXLab · East Kilbride</small>
+
+          <strong>
+            Your next step starts here.
+          </strong>
+
+          <p>
+            Find the clinic at Gainline Strength and
+            arrange your appointment online.
+          </p>
+
+          <a
+            href="https://rxlab.uk2.cliniko.com/"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book Your Visit <span class="arrow">↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="reveal" style="text-align:center">
+          <span class="eyebrow">Useful information</span>
+          <h2 style="margin-top:20px">Questions before you book?</h2>
+        </div>
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary>Where is RXLab Physio located?</summary>
+            <div class="faq-answer">
+              RXLab operates within Gainline Strength,
+              20 Wilson Place, East Kilbride, Scotland.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What services does RXLab provide?</summary>
+            <div class="faq-answer">
+              RXLab publishes services including physiotherapy,
+              sports massage, supported rehabilitation,
+              strength training, Full Body MOT and online
+              rehabilitation.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How much does an initial consultation cost?</summary>
+            <div class="faq-answer">
+              RXLab's published price is £60 for a
+              60-minute initial consultation. Check the
+              booking platform for current availability
+              and pricing.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I book online?</summary>
+            <div class="faq-answer">
+              Yes. RXLab uses the Cliniko booking platform
+              for online appointments.
+              <a href="https://rxlab.uk2.cliniko.com/"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Access online booking.
+              </a>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does RXLab offer online rehabilitation?</summary>
+            <div class="faq-answer">
+              Yes. The published online rehabilitation
+              programme includes objective testing,
+              weekly check-ins, monthly review appointments
+              and video analysis. Its published price is
+              £100 per month.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Who provides physiotherapy at RXLab?</summary>
+            <div class="faq-answer">
+              The official website introduces Lauren and
+              Gregor, highlighting their physiotherapy
+              qualifications and clinical experience.
+            </div>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+
+    <section class="final-cta">
+      <div class="container reveal">
+        <h2>Ready to take the next step in your recovery?</h2>
+
+        <p>
+          Start with an initial consultation and discuss
+          a rehabilitation approach built around your
+          individual needs and goals.
+        </p>
+
+        <a
+          href="https://rxlab.uk2.cliniko.com/"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book Your RXLab Appointment <span class="arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <a href="#home" class="brand">
+            <span class="brand-name">RXLAB</span>
+            <span class="brand-caption">Physiotherapy</span>
+          </a>
+
+          <p>
+            Clinical physiotherapy, sports rehabilitation
+            and strength-based support in East Kilbride.
+          </p>
+        </div>
+
+        <div>
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#rehabilitation">Rehabilitation</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#team">Our Practitioners</a></li>
+            <li><a href="#location">Find Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Get in Touch</h3>
+          <ul class="footer-links">
+            <li>
+              <a href="mailto:info@rxlabphysio.com">
+                info@rxlabphysio.com
+              </a>
+            </li>
+            <li>
+              <a href="https://rxlab.uk2.cliniko.com/"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Online Booking
+              </a>
+            </li>
+            <li>
+              <a href="https://www.rxlabphysio.com/">
+                Official Website
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="current-year">2026</span> RXLab Physio.</span>
+        <span>Physiotherapy · Rehabilitation · Performance</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- EXACTLY TWO MOBILE CTA BUTTONS -->
+
+  <div class="mobile-cta" aria-label="Quick contact actions">
+
+    <a
+      class="mobile-book"
+      href="https://rxlab.uk2.cliniko.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Book Appointment
+    </a>
+
+    <a
+      class="mobile-email"
+      href="mailto:info@rxlabphysio.com"
+    >
+      Email RXLab
+    </a>
+
+  </div>
+
+  <script>
+    // Mobile navigation
+
+    const navToggle = document.querySelector(".nav-toggle");
+    const navigation = document.querySelector(".nav-links");
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("is-open");
+
+      document.body.classList.toggle("menu-open", isOpen);
+
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+
+      navToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
+
+      navToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    // Close navigation after selecting a destination
+
+    navigation.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("is-open");
+        document.body.classList.remove("menu-open");
+
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open navigation");
+        navToggle.textContent = "☰";
+      });
+    });
+
+    // Update copyright year
+
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+
+    // Scroll reveal animations
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+      revealElements.forEach(element => {
+        revealObserver.observe(element);
+      });
+    } else {
+      revealElements.forEach(element => {
+        element.classList.add("is-visible");
+      });
+    }
+  </script>
+
+</body>
+</html>
